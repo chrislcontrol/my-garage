@@ -2,7 +2,6 @@
 __pycache__/
 *.py[cod]
 *$py.class
-.env
 
 # C extensions
 *.so
@@ -96,8 +95,7 @@ ipython_config.py
 __pypackages__/
 
 # Celery stuff
-celerybeat-schedule
-celerybeat.pid
+celerybeat*
 
 # SageMath parsed files
 *.sage.py
@@ -128,3 +126,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+.idea
+staticfiles/
+
+#VSCODE
+.vscode/

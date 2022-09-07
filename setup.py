@@ -1,11 +1,13 @@
 from setuptools import setup, find_packages
 
-setup(name='my_garage',
-      description='My Garage',
-      long_description='My Garage Car Sales',
+from my_garage.settings import PROJECT_NAME, PROJECT_DESCRIPTION, PROJECT_VERSION
+
+setup(name=PROJECT_NAME,
+      description=PROJECT_DESCRIPTION,
+      long_description=PROJECT_DESCRIPTION,
       packages=find_packages(exclude=["*tests*"]),
       package_data={'': ['*.yaml']},
-      version='1.0.0',
+      version=PROJECT_VERSION,
       install_requires=[
           'gevent==21.12.0',
           'gunicorn==20.1.0',
@@ -16,6 +18,10 @@ setup(name='my_garage',
           'django-extensions==3.2.0',
           'django-choices==1.7.2',
           'django-cors-headers==3.13.0',
+          'psycopg2==2.9.3',
+          'drf-yasg==1.21.3',
+          'whitenoise==6.2.0',
+          'requests==2.28.1',
       ],
       extras_require={
           'dev': [

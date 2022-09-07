@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := default_target
 
-PROJECT_NAME := my_garage
+PROJECT_NAME := my-garage
 PYTHON_VERSION := 3.10.4
 VENV_NAME := $(PROJECT_NAME)-$(PYTHON_VERSION)
 DATABASE_PASS := postgres
@@ -73,7 +73,7 @@ test-lf:
 
 # Postgres Local
 run-postgres:
-	docker start nix-proxy-postgres 2>/dev/null || docker run --name nix-proxy-postgres -p 5432:5432 -e POSTGRES_PASSWORD='$(DATABASE_PASS)' -d postgres:10-alpine
+	docker start $(PROJECT_NAME)-postgres 2>/dev/null || docker run --name $(PROJECT_NAME)-postgres -p 5432:5432 -e POSTGRES_PASSWORD='$(DATABASE_PASS)' -d postgres:14-alpine
 
 # Run Local Server
 runserver: clean collectstatic containers-reset

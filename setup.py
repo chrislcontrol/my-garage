@@ -11,7 +11,7 @@ setup(name=PROJECT_NAME,
       install_requires=[
           'gevent==21.12.0',
           'gunicorn==20.1.0',
-          'django==4.1.1',
+          'django==4.1.13',
           'django-filter==22.1',
           'djangorestframework==3.13.1',
           'django-environ==0.9.0',
